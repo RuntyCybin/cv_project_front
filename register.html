@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+  <meta name="generator" content="Astro v5.13.2" />
+  <title>CV - Nicolas</title>
+  <link rel="icon" type="image/x-icon" href="./assets/imgs/favicon.ico" />
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/" />
+  <script src="./assets/js/color-modes.js"></script>
+  <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <meta name="theme-color" content="#712cf9" />
+  <link href="sticky-footer-navbar.css" rel="stylesheet" />
+  <style>
+    form .form-control {
+      font-family: "Courier New", Courier, monospace;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid currentColor;
+      border-radius: 0;
+      box-shadow: none;
+      padding-left: 0;
+      padding-right: 0;
+      caret-color: currentColor;
+    }
+
+    form .form-control:focus {
+      background: transparent;
+      border-color: currentColor;
+      box-shadow: none;
+      outline: none;
+    }
+
+    form .form-control::placeholder {
+      color: currentColor;
+      opacity: 0.55;
+    }
+
+    .login_btn {
+      font-family: "Courier New", Courier, monospace;
+      background: transparent;
+      border: 1px solid currentColor;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 1em;
+      color: currentColor;
+      --bs-btn-bg: #36383b;
+      --bs-btn-border-color: #3e4043;
+      --bs-btn-hover-bg: #3e4043;
+      --bs-btn-hover-border-color: #3e4043;
+      --bs-btn-active-bg: #3e4043;
+      --bs-btn-active-border-color: #3e4043;
+    }
+
+    .form_registro_usuario {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <form method="post" action="/register" class="form_registro_usuario">
+          <div class="mb-3">
+            <label for="registerUsername" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="registerUsername" placeholder="su_nombre_de_usuario" required>
+          </div>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email del usuario</label>
+            <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp"  placeholder="su_email@example.com" required>
+            <div id="emailHelp" class="form-text">Nunca compartiremos su email con nadie más.</div>
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="registerPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="registerPasswordConfirm" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="registerPasswordConfirm" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerSurname" class="form-label">Apellido del usuario</label>
+            <input type="text" class="form-control" id="registerSurname" placeholder="su_apellido" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerBirthday" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="registerBirthday" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerPhone" class="form-label">Telefono del usuario</label>
+            <input type="phone" class="form-control" id="registerPhone" placeholder="su_telefono" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerVia" class="form-label">Direccion del usuario - tipo de via</label>
+            <input type="text" class="form-control" id="registerVia" placeholder="su_via" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerStr" class="form-label">Direccion del usuario - calle</label>
+            <input type="text" class="form-control" id="registerStr" placeholder="su_calle" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerNumber" class="form-label">Direccion del usuario - numero de la casa</label>
+            <input type="text" class="form-control" id="registerNumber" placeholder="su_numero" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerPostalCode" class="form-label">Direccion del usuario - codigo postal</label>
+            <input type="text" class="form-control" id="registerPostalCode" placeholder="su_codigo_postal" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerCity" class="form-label">Direccion del usuario - ciudad</label>
+            <input type="text" class="form-control" id="registerCity" placeholder="su_ciudad" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerProvince" class="form-label">Direccion del usuario - provincia</label>
+            <input type="text" class="form-control" id="registerProvince" placeholder="su_provincia" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerCountry" class="form-label">Direccion del usuario - país</label>
+            <input type="text" class="form-control" id="registerCountry" placeholder="su_pais" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="registerNacionalidad" class="form-label">Nacionalidad</label>
+            <input type="text" class="form-control" id="registerNacionalidad" placeholder="su_nacionalidad" required>
+          </div>
+
+          <button type="submit" class="login_btn">Registrar</button>
+          <button type="button" class="login_btn" onclick="window.location.href='/login.html'">Volver</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="./assets/js/register.js"></script>
+</body>
+
+</html>

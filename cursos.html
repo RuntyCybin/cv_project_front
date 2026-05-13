@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <title>CV - Courses</title>
+  <link rel="icon" type="image/x-icon" href="./assets/imgs/favicon.ico" />
+  <script src="./assets/js/color-modes.js"></script>
+  <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <meta name="theme-color" content="#712cf9" />
+  <link href="sticky-footer-navbar.css" rel="stylesheet" />
+  <style>
+    .bi {
+      vertical-align: -0.125em;
+      fill: currentColor;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <div id="header-placeholder"></div>
+  <!-- Begin page content -->
+  <main class="flex-shrink-0 flex-grow-1">
+    <!-- SVG's -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="arrow-right-short" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
+        </path>
+      </symbol>
+      <symbol id="check2-circle" viewBox="0 0 16 16">
+        <path
+          d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z">
+        </path>
+        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z">
+        </path>
+      </symbol>
+    </svg>
+
+    <!-- Header content -->
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <img class="d-block mx-auto mb-4" src="/assets/imgs/svg_logo.svg" alt="" width="200" height="200" />
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light" id="personNameTitleH1">Nicolas Shelevoy Shelevoy</h1>
+          <p class="lead text-body-secondary">
+            Here you can find the courses I've taken throughout my career.
+            I am always eager to learn and expand my knowledge, so feel free to
+            reach out if you have any questions or opportunities.
+          </p>
+          <div class="d-inline-flex gap-2 mb-5">
+            <a class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" href="contact.html" type="button">
+              Contact me
+              <svg class="bi ms-2" width="24" height="24" aria-hidden="true">
+                <use xlink:href="#arrow-right-short"></use>
+              </svg>
+            </a>
+            <button class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" type="button">
+              Socials
+            </button>
+          </div>
+        </div>
+    </section>
+
+    <div class="bg-body-tertiary px-4 py-5 text-center">
+      <h1 class="display-5 fw-bold text-white">Courses</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">
+          Here you will find a whole list of courses I've taken, both online and in-person,
+          that have helped me develop my skills and knowledge in various areas.
+          I am always eager to learn and expand my horizons, so feel free to reach out
+          if you have any questions or opportunities.
+        </p>
+      </div>
+
+
+      <div class="container">
+        <div class="list-group" id="cursos-container">
+
+          <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small>3 days ago</small>
+            </div>
+            <p class="mb-1">Some placeholder content in a paragraph.</p>
+            <small>And some small print.</small>
+          </a>
+
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small class="text-body-secondary">3 days ago</small>
+            </div>
+            <p class="mb-1">Some placeholder content in a paragraph.</p>
+            <small class="text-body-secondary">And some muted small print.</small>
+          </a>
+
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small class="text-body-secondary">3 days ago</small>
+            </div>
+            <p class="mb-1">Some placeholder content in a paragraph.</p>
+            <small class="text-body-secondary">And some muted small print.</small>
+          </a>
+        </div>
+      </div>
+
+      <!-- Create Course Button -->
+      <a class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" data-bs-toggle="modal"
+        data-bs-target="#createCursoModal" type="button" style="margin-top: 20px;">
+        Create new course
+      </a>
+      <!-- Create Course Modal -->
+      <div class="modal fade" id="createCursoModal" tabindex="-1" aria-labelledby="createCursoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="createCursoModalLabel">Create New Course</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form style="text-align: left;">
+                <div class="mb-3">
+                  <label for="courseName" class="form-label">Course Name</label>
+                  <input type="text" class="form-control" id="curso-nombre" placeholder="Enter course name">
+                </div>
+                <div class="mb-3">
+                  <label for="courseProvider" class="form-label">Course Provider</label>
+                  <input type="text" class="form-control" id="curso-portal" placeholder="Enter course provider">
+                </div>
+                <div class="mb-3">
+                  <label for="courseUrl" class="form-label">Course URL</label>
+                  <input type="text" class="form-control" id="curso-url" placeholder="Enter course URL">
+                </div>
+                <div class="mb-3">
+                  <label for="courseAuthor" class="form-label">Course Author</label>
+                  <input type="text" class="form-control" id="curso-autor" placeholder="Enter course author">
+                </div>
+                <div class="mb-3">
+                  <label for="coursePeriod" class="form-label">Course Period</label>
+                  <input type="text" class="form-control" id="curso-periodo" placeholder="Enter course period (e.g., 01-2020 - 12-2021)">
+                </div>
+                <div class="mb-3">
+                  <label for="courseDescription" class="form-label">Course Description</label>
+                  <input type="text" class="form-control" id="curso-descripcion" placeholder="Enter course description">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" onclick="createCurso()">Create Course</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/utils.js"></script>
+  <script src="./assets/js/cursos.js"></script>
+  <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
