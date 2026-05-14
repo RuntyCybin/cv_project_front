@@ -37,6 +37,7 @@ async function fetchCursos(idPersona) {
     cursosContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar los cursos
     const renderCursos = (cursos) => {
       cursosContainer.innerHTML = "";
+      cursosContainer.classList.add("justify-content-center");
       cursos.forEach(curso => {
         const cursoElement = document.createElement("div");
         cursoElement.classList.add("col", "d-flex", "align-items-start");
