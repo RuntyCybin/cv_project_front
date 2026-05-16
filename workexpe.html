@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+  <meta name="generator" content="Astro v5.13.2" />
+  <title>Album example · Bootstrap v5.3</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/" />
+  <script src="./assets/js/color-modes.js"></script>
+  <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="theme-color" content="#712cf9" />
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: #0000001a;
+      border: solid rgba(0, 0, 0, 0.15);
+      border-width: 1px 0;
+      box-shadow:
+        inset 0 0.5em 1.5em #0000001a,
+        inset 0 0.125em 0.5em #00000026;
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -0.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .bi {
+      width: 1em;
+      height: 1em;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="header-placeholder"></div>
+  <!-- Begin page content -->
+  <main>
+
+    <!-- Header section -->
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light" id="personNameTitleH1">Nicolas Shelevoy Shelevoy</h1>
+          <p class="lead text-body-secondary">
+            Here, you can explore some of my
+            notable Java projects and applications that showcase my skills and
+            expertise in Java development.
+          </p>
+          <div class="d-inline-flex gap-2 mb-5">
+            <a class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" href="contact.html" type="button">
+              Contact me
+              <svg class="bi ms-2" width="24" height="24" aria-hidden="true">
+                <use xlink:href="#arrow-right-short"></use>
+              </svg>
+            </a>
+            <button class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" type="button">
+              Socials
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main experience content -->
+    <div class="album py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="experiences-container">
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top" height="225"
+                preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <title>Ceva Logistics</title>
+                <rect width="100%" height="100%" fill="#55595c"></rect>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                  Ceva Logistics
+                </text>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">
+                  Contributed to the design, development, and maintenance of multiple enterprise-level applications
+                  within an agile SCRUM environment,
+                  ensuring scalability, reliability, and clean architectural design across various Java-based systems.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      data-bs-target="#exampleModal">
+                      View experience
+                    </button>
+                  </div>
+                  <small class="text-body-secondary">9 mins</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ceva Logistics</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="list-group">
+                      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Microservices project (JDK 11, Spring Boot)</h5>
+                          <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Developed and maintained RESTful microservices</p>
+                        <small> with
+                          comprehensive endpoint testing using Rest Assured.
+                          Managed repositories through GitLab and implemented automated CI/CD pipelines with Jenkins and
+                          Kubernetes Dashboard.</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Monolithic Web Application (JDK 8, Spring MVC)</h5>
+                          <small class="text-body-secondary">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Enhanced and maintained a legacy PrimeFaces web
+                          application.</p>
+                        <small class="text-body-secondary">
+                          Managed database versioning with Liquibase and conducted automated UI testing with Selenium.
+                          Utilized GitLab, Jenkins, and Kubernetes for continuous integration and delivery.</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Microservices project with Hexagonal Architecture (JDK 21, Spring Boot, AWS
+                            EC2)</h5>
+                          <small class="text-body-secondary">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Designed and implemented a modular
+                        </p>
+                        <small class="text-body-secondary">
+                          maintainable microservices ecosystem following hexagonal architecture principles. Utilized
+                          Spring
+                          Boot, JPA/Hibernate, and Kafka for event-driven communication.
+                          Defined and documented APIs with OpenAPI 3 and Swagger, containerized environments with
+                          Docker, and
+                          worked with PostgreSQL and H2 databases.
+                          Ensured quality and resilience through extensive JUnit testing and CI/CD automation, deploying
+                          the
+                          solution to an AWS EC2 Linux
+                          instance with Docker-based runtime and hardened security groups.</small>
+                      </a>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <!-- Create Experience Button -->
+        <a class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" data-bs-toggle="modal"
+          data-bs-target="#createExperienciaModal" type="button" style="margin-top: 20px;">
+          Create new experience
+        </a>
+        <!-- Create Experience Modal -->
+        <div class="modal fade" id="createExperienciaModal" tabindex="-1" aria-labelledby="createExperienciaModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="createExperienciaModalLabel">Create New Experience</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form style="text-align: left;">
+                  <div class="mb-3">
+                    <label for="expCompany" class="form-label">Experience Company Name</label>
+                    <input type="text" class="form-control" id="expCompany" placeholder="Enter experience company name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="expRole" class="form-label">Experience Role</label>
+                    <input type="text" class="form-control" id="expRole"
+                      placeholder="Enter experience role">
+                  </div>
+                  <div class="mb-3">
+                    <label for="expDescription" class="form-label">Experience Description</label>
+                    <input type="text" class="form-control" id="expDescription" placeholder="Enter experience description">
+                  </div>
+                  <div class="mb-3">
+                    <label for="expPeriod" class="form-label">Experience Period</label>
+                    <input type="text" class="form-control" id="expPeriod"
+                      placeholder="Enter experience period (e.g., 01-2020 - 12-2021)">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"
+                  onclick="createExperience()">Create Experience</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+
+
+  <div id="footer-placeholder"></div>
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/utils.js"></script>
+  <script src="./assets/js/workexpe.js"></script>
+  <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
