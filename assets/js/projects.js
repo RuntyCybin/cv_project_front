@@ -33,15 +33,16 @@ async function fetchProjects(idPersona) {
     console.error("Error fetching projects:", error);
     return null;
   }
+}
 
-  function renderProjects(projects) {
-    const projectsContainer = document.getElementById("projects-container");
-    projectsContainer.innerHTML = "";
-    projectsContainer.innerHTML = "";
-    projects.forEach(project => {
-      const projectElement = document.createElement("div");
-      projectElement.classList.add("col");
-      projectElement.innerHTML = `
+function renderProjects(projects) {
+  const projectsContainer = document.getElementById("projects-container");
+  projectsContainer.innerHTML = "";
+  projectsContainer.innerHTML = "";
+  projects.forEach(project => {
+    const projectElement = document.createElement("div");
+    projectElement.classList.add("col");
+    projectElement.innerHTML = `
         <div class="card h-100">
           <div class="card-body">
             <div class="d-flex align-items-center mb-3">
@@ -62,46 +63,88 @@ async function fetchProjects(idPersona) {
           </div>
         </div>
       `;
-      projectsContainer.appendChild(projectElement);
-    });
+    projectsContainer.appendChild(projectElement);
+  });
+}
+
+function createProject() {
+  const token = localStorage.getItem("token");
+  const personaId = localStorage.getItem("personaId");
+  const titulo = document.getElementById("project-name").value;
+  const descripcion = document.getElementById("project-descripcion").value;
+  const consultora = document.getElementById("project-company").value;
+  const periodo = document.getElementById("project-periodo").value;
+
+  if (!titulo || !descripcion || !consultora || !periodo) {
+    alert("Please fill in all fields.");
+    return;
   }
 
-  function createProject() {
-    const token = localStorage.getItem("token");
-    const personaId = localStorage.getItem("personaId");
-    const titulo = document.getElementById("project-title").value;
-    const descripcion = document.getElementById("project-description").value;
-    const consultora = document.getElementById("project-consultora").value;
-    const periodo = document.getElementById("project-periodo").value;
+  const projectData = {
+    titulo,
+    descripcion,
+    consultora,
+    periodo,
+    persona: { id: personaId }
+  };
 
-    const projectData = {
-      titulo,
-      descripcion,
-      consultora,
-      periodo,
-      persona: { id: personaId }
-    };
-
-    fetch(`${CONFIG.API_BASE_URL}/cv/projects`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-      body: JSON.stringify(projectData)
+  fetch(`${CONFIG.API_BASE_URL}/cv/projects`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify(projectData)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
     })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log("Project created successfully:", data);
-        fetchProjects(personaId); // Refrescar la lista de proyectos después de crear uno nuevo
-      })
-      .catch(error => {
-        console.error("Error creating project:", error);
-      });
+    .then(data => {
+      bootstrap.Modal.getInstance(document.getElementById("createProjectModal")).hide();
+      console.log("Project created successfully:", data);
+      createRelacionPersonaProject(data.id);
+    })
+    .catch(error => {
+      console.error("Error creating project:", error);
+    });
+}
+
+function createRelacionPersonaProject(proyectoId) {
+  const personaId = localStorage.getItem("personaId");
+
+  if (!proyectoId) {
+    alert("Please select a project.");
+    return;
   }
+
+  const token = localStorage.getItem("token");
+  fetch(`${CONFIG.API_BASE_URL}/cv/projects/persona-project`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify({ personaId, proyectoId })
+  })
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.json();
+    })
+    .then(data => {
+      console.log("RelacionPersonaProject created successfully:", data);
+      document.getElementById("projects-container").innerHTML = `
+        <div class="col text-center text-body-secondary py-5">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>`;
+      setTimeout(() => fetchProjects(personaId), 2000);
+    })
+    .catch(error => {
+      console.error("Error creating RelacionPersonaProject:", error);
+      alert("Error associating project with persona.");
+    });
 }

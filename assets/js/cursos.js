@@ -79,7 +79,7 @@ function createCurso() {
     })
     .then(data => {
       bootstrap.Modal.getInstance(document.getElementById("createCursoModal")).hide();
-      alert("Course created successfully!");
+      console.log("Course created successfully!");
       createRelacionPersonaCurso(data.id);
     })
     .catch(error => {
