@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   } else {
-    console.log("No se encontró token. Redirigiendo a login...");
+    console.error("No se encontró token. Redirigiendo a login...");
     window.location.href = "/login.html";
   }
 });
