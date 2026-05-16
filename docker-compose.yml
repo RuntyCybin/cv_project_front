@@ -10,6 +10,7 @@ services:
       - ./login.html:/usr/share/nginx/html/login.html:ro
       - ./register.html:/usr/share/nginx/html/register.html:ro
       - ./workexpe.html:/usr/share/nginx/html/workexpe.html:ro
+      - ./projects.html:/usr/share/nginx/html/projects.html:ro
       - ./skills.html:/usr/share/nginx/html/skills.html:ro
       - ./contact.html:/usr/share/nginx/html/contact.html:ro
       - ./cursos.html:/usr/share/nginx/html/cursos.html:ro

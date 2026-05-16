@@ -63,7 +63,7 @@ function createCurso() {
     alert("Please fill in all fields.");
     return;
   }
-  
+
   const token = localStorage.getItem("token");
   fetch(`${CONFIG.API_BASE_URL}/cv/cursos`, {
     method: "POST",
@@ -73,19 +73,19 @@ function createCurso() {
     },
     body: JSON.stringify({ nombre, descripcion, portal, url, autor, periodo, personaId })
   })
-  .then(response => {
-    if (!response.ok) throw new Error("Network response was not ok");
-    return response.json();
-  })
-  .then(data => {
-    bootstrap.Modal.getInstance(document.getElementById("createCursoModal")).hide();
-    alert("Course created successfully!");
-    createRelacionPersonaCurso(data.id);
-  })
-  .catch(error => {
-    console.error("Error creating course:", error);
-    alert("Error creating course.");
-  });
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.json();
+    })
+    .then(data => {
+      bootstrap.Modal.getInstance(document.getElementById("createCursoModal")).hide();
+      alert("Course created successfully!");
+      createRelacionPersonaCurso(data.id);
+    })
+    .catch(error => {
+      console.error("Error creating course:", error);
+      alert("Error creating course.");
+    });
 }
 
 function createRelacionPersonaCurso(cursoId) {
@@ -105,22 +105,22 @@ function createRelacionPersonaCurso(cursoId) {
     },
     body: JSON.stringify({ cursoId, personaId })
   })
-  .then(response => {
-    if (!response.ok) throw new Error("Network response was not ok");
-    return response.json();
-  })
-  .then(data => {
-    console.log("Course added to profile successfully!");
-    document.getElementById("cursos-container").innerHTML = `
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.json();
+    })
+    .then(data => {
+      console.log("Course added to profile successfully!");
+      document.getElementById("cursos-container").innerHTML = `
       <div class="col text-center text-body-secondary py-5">
         <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>`;
-    setTimeout(() => fetchCursos(personaId), 2000);
-  })
-  .catch(error => {
-    console.error("Error adding course to profile:", error);
-    alert("Error adding course to profile.");
-  });
+      setTimeout(() => fetchCursos(personaId), 2000);
+    })
+    .catch(error => {
+      console.error("Error adding course to profile:", error);
+      alert("Error adding course to profile.");
+    });
 }
